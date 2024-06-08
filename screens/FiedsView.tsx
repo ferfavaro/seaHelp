@@ -36,16 +36,6 @@ export default function FieldsView () {
     getPermissions();
   }, [])
 
-  const clearFields = () => {
-    setName('');
-    setPostalCode('');
-    setCity('');
-    setState('');
-    setDistrict('');
-    setStreet('');
-    setStreetNumber('');
-  }
-
   function handleEnviar() {
     navigation.navigate('Home');
     setName('');

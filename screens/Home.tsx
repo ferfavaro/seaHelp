@@ -7,7 +7,6 @@ import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
   const navigation = useNavigation();
-  const [image, setImage] = useState<string | undefined>(undefined);
 
   const uploadImage = async (mode: string) => {
     try {
@@ -29,8 +28,6 @@ export function Home() {
           aspect: [1, 1],
           quality: 1,
         })
-        console.log(result.assets?.[0].uri)
-        setImage(result.assets?.[0].uri)
       }
 
       if (!result.canceled) {
@@ -45,7 +42,6 @@ export function Home() {
 
   return (
     <SafeAreaView position='relative' h={"100%"} justifyContent='flex-end'>
-      <Image zIndex={2} alt='Fundo' source={require("../assets/teste.png")}></Image>
       <HStack justifyContent='center' w={"100%"}>
           <Button
             size="xl"
